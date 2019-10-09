@@ -1,21 +1,22 @@
-package edu.wctc.mvcdemo;
+package edu.wctc.mvcforms;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-public class HelloWorldController {
+public class SimpleFormController {
     // method to show the initial HTML form
     // URL is case sensitive!
     @RequestMapping("/showForm")
     public String showForm() {
         // Returns name of view
         // Prefix and suffix are appended
-        // (So it becomes /WEB-INF/view/helloworld-form.jsp)
-        return "helloworld-form";
+        // (So it becomes /WEB-INF/view/simple-form.jsp)
+        return "simple-form";
     }
 
     // method to process the form and show confirmation
@@ -23,8 +24,8 @@ public class HelloWorldController {
     public String processForm() {
         // Returns name of view
         // Prefix and suffix are appended
-        // (So it becomes /WEB-INF/view/helloworld.jsp)
-        return "helloworld";
+        // (So it becomes /WEB-INF/view/simple-form-result.jsp)
+        return "simple-form-result";
     }
 
     // method to read form data and add it to the model
@@ -47,7 +48,29 @@ public class HelloWorldController {
 
         // Returns name of view
         // Prefix and suffix are appended
-        // (So it becomes /WEB-INF/view/helloworld.jsp)
-        return "helloworld";
+        // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
+        return "simple-form-shout";
+    }
+
+    @RequestMapping("/shoutHelloAgain")
+    public String shoutWithAnnotation(
+            @RequestParam("studentName") String theName,
+            Model model) {
+        // Does the same thing as shout() above, but Spring will read
+        // the form param "studentName" from the HttpServletRequest
+        // and assign it to the method param theName automatically
+
+        // Create the message
+        String message = "Hello again, " + theName.toUpperCase() + "!!!!";
+
+        // Add message to model
+        // "msg" is the key, message contains the value
+        // The value can be any data type, not just Strings!
+        model.addAttribute("msg", message);
+
+        // Returns name of view
+        // Prefix and suffix are appended
+        // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
+        return "simple-form-shout";
     }
 }
