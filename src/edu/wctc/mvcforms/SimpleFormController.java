@@ -19,18 +19,9 @@ public class SimpleFormController {
         return "simple-form";
     }
 
-    // method to process the form and show confirmation
-    @RequestMapping("/processForm")
-    public String processForm() {
-        // Returns name of view
-        // Prefix and suffix are appended
-        // (So it becomes /WEB-INF/view/simple-form-result.jsp)
-        return "simple-form-result";
-    }
-
     // method to read form data and add it to the model
     // The Model class is part of Spring
-    @RequestMapping("/shoutHello")
+    @RequestMapping("/processForm")
     public String shout(HttpServletRequest request, Model model){
         // Read request parameter that came from form
         String theName = request.getParameter("studentName");
@@ -49,7 +40,7 @@ public class SimpleFormController {
         // Returns name of view
         // Prefix and suffix are appended
         // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
-        return "simple-form-shout";
+        return "simple-form-result";
     }
 
     @RequestMapping("/shoutHelloAgain")
@@ -71,6 +62,6 @@ public class SimpleFormController {
         // Returns name of view
         // Prefix and suffix are appended
         // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
-        return "simple-form-shout";
+        return "simple-form-result";
     }
 }
