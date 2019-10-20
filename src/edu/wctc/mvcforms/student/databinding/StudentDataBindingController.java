@@ -1,43 +1,17 @@
-package edu.wctc.mvcforms;
+package edu.wctc.mvcforms.student.databinding;
 
+import edu.wctc.mvcforms.Student;
+import edu.wctc.mvcforms.Student2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-
 @Controller
-@RequestMapping("/student")
-public class StudentController {
-    @RequestMapping("/")
-    public String showHomePage() {
-        return "student/index";
-    }
-
-    @RequestMapping("/formManual")
-    public String showFormManual() {
-        return "student/student-form-manual";
-    }
-
-    @RequestMapping("/processManual")
-    public String processFormManually(HttpServletRequest request, Model model) {
-        // create the Student object manually
-        Student studentObj = new Student();
-
-        // populate it manually using the request params
-        studentObj.setFirstName(request.getParameter("firstName"));
-        studentObj.setLastName(request.getParameter("lastName"));
-
-        // add it to the model manually
-        model.addAttribute("manualStudent", studentObj);
-
-        // return name of view template
-        return "student/student-confirmation-manual";
-    }
-
-    @RequestMapping("/formBinding")
-    public String showFormBinding(Model model) {
+@RequestMapping("/student/databinding")
+public class StudentDataBindingController {
+    @RequestMapping("/showForm")
+    public String showDataBindingForm(Model model) {
         // create a student object
         Student theStudent = new Student();
 
@@ -45,15 +19,15 @@ public class StudentController {
         model.addAttribute("bindingStudent", theStudent);
 
         // return name of view template
-        return "student/student-form-binding";
+        return "student/databinding/student-form-binding";
     }
 
-    @RequestMapping("/processBinding")
-    public String processFormWithBinding(@ModelAttribute("bindingStudent") Student theStudent) {
-        // Some output to prove that Spring populated the Student object
+    @RequestMapping("/processForm")
+    public String processDataBindingForm(@ModelAttribute("bindingStudent") Student theStudent) {
+        // Some output just to prove that Spring populated the Student object
         System.out.println(theStudent.getFirstName());
         System.out.println(theStudent.getLastName());
-        return "student/student-confirmation-binding";
+        return "student/databinding/student-confirmation-binding";
     }
 
     @RequestMapping("/formBinding2")

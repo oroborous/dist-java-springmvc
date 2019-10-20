@@ -1,4 +1,4 @@
-package edu.wctc.mvcforms;
+package edu.wctc.mvcforms.forms;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ public class SimpleFormController {
         // Returns name of view
         // Prefix and suffix are appended
         // (So it becomes /WEB-INF/view/simple-form.jsp)
-        return "simple-form";
+        return "forms/simple-form";
     }
 
     // method to read form data and add it to the model
@@ -40,7 +40,7 @@ public class SimpleFormController {
         // Returns name of view
         // Prefix and suffix are appended
         // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
-        return "simple-form-result";
+        return "forms/simple-form-result";
     }
 
     @RequestMapping("/shoutHelloAgain")
@@ -62,6 +62,6 @@ public class SimpleFormController {
         // Returns name of view
         // Prefix and suffix are appended
         // (So it becomes /WEB-INF/view/simple-form-shout.jsp)
-        return "simple-form-result";
+        return "forms/simple-form-result";
     }
 }

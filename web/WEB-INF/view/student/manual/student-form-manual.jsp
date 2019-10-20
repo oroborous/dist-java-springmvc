@@ -4,7 +4,7 @@
     <title>Student Registration (Manual)</title>
 </head>
 <body>
-<form action="processManual">
+<form action="processForm">
     First name: <input type="text" name="firstName">
     <br/>
     <br/>

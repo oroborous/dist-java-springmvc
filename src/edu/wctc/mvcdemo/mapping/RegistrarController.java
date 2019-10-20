@@ -1,15 +1,16 @@
-package edu.wctc.mvcdemo;
+package edu.wctc.mvcdemo.mapping;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/finAid")
-public class FinAidController {
+@RequestMapping("/registrar")
+public class RegistrarController {
     @RequestMapping("/home")
     public String showHomePage() {
-        return "fin-aid";
+        return "mapping/registrar";
     }
 }
+
 
 

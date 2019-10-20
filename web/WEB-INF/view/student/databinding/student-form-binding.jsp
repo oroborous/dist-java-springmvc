@@ -6,8 +6,8 @@
 </head>
 <body>
     <!-- modelAttribute must match the key given in model.addAttribute
-         See showFormBinding() method in StudentController class -->
-    <form:form action="processBinding" modelAttribute="bindingStudent">
+         See showDataBindingForm() method in StudentDataBindingController class -->
+    <form:form action="processForm" modelAttribute="bindingStudent">
 
         <!-- path attribute matches the field in the Student class -->
         <!-- When the form is loaded, Spring will call bindingStudent.getFirstName() -->
