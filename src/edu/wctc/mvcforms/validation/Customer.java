@@ -1,14 +1,16 @@
-package edu.wctc.mvcforms;
+package edu.wctc.mvcforms.validation;
 
-import org.springframework.stereotype.Component;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-@Component
-public class Student {
+public class Customer {
+    @NotNull(message="can't be null")
+    @Size(min=1, message="min length 1")
     private String firstName;
-    private String lastName;
 
-    public Student() {
-    }
+    @NotNull(message="can't be null")
+    @Size(min=1, message="min length 1")
+    private String lastName;
 
     public String getFirstName() {
         return firstName;

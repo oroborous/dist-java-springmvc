@@ -1,7 +1,6 @@
 package edu.wctc.mvcforms.student.databinding;
 
-import edu.wctc.mvcforms.Student;
-import edu.wctc.mvcforms.Student2;
+import edu.wctc.mvcforms.student.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -28,26 +27,5 @@ public class StudentDataBindingController {
         System.out.println(theStudent.getFirstName());
         System.out.println(theStudent.getLastName());
         return "student/databinding/student-confirmation-binding";
-    }
-
-    @RequestMapping("/formBinding2")
-    public String showFormBinding2(Model model) {
-        // create a student object
-        Student2 theStudent = new Student2();
-
-        // add student object to the model
-        model.addAttribute("bindingStudent", theStudent);
-
-        // return name of view template
-        return "student/student-form-binding2";
-    }
-
-    @RequestMapping("/processBinding2")
-    public String processFormWithBinding2(@ModelAttribute("bindingStudent") Student2 theStudent) {
-        // Some output to prove that Spring populated the Student2 object
-        System.out.println(theStudent.getFirstName());
-        System.out.println(theStudent.getLastName());
-        System.out.println(theStudent.getCountry());
-        return "student/student-confirmation-binding2";
     }
 }

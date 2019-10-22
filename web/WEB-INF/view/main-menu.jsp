@@ -25,10 +25,21 @@
     <li><a href="${pageContext.request.contextPath}/student/databinding/showForm">Form processing using data binding</a></li>
 </ul>
 
+<h3>Dropdown Boxes, Checkboxes, and Radio Buttons</h3>
+<p>
+    <a href="travel/showForm">Foreign Exchange Student Application</a>
+</p>
+
+<h3>Validation</h3>
+<p>
+    <a href="validation/showForm">Customer Information</a>
+</p>
+
 <p>
     <h3>Reference Static Resources (Images, Stylesheets, etc.)</h3>
     <img src="${pageContext.request.contextPath}/resources/img/hellokitty.gif" alt="Hello Kitty typing" width="480" height="480">
 </p>
+
 
 
 </body>

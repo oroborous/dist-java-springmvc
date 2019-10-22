@@ -1,6 +1,6 @@
 package edu.wctc.mvcforms.student.manual;
 
-import edu.wctc.mvcforms.Student;
+import edu.wctc.mvcforms.student.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

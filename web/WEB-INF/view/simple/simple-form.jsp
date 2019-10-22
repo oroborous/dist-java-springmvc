@@ -6,19 +6,19 @@
 <body>
 
 
-<!-- Form v1, mapped to "processForm" in SimpleFormController.java -->
+<!-- Form v1, mapped to "shout" in SimpleFormController.java -->
 <!-- Demonstrates model, view template, and controller -->
 <h2>Be Shouted At</h2>
-<form action="processForm" method="GET">
+<form action="shout" method="GET">
     <input type="text" name="studentName" placeholder="Student Name">
     <br/>
     <input type="submit">
 </form>
 
-<!-- Form v2, mapped to "shoutHelloAgain" in SimpleFormController.java -->
+<!-- Form v2, mapped to "shoutAgain" in SimpleFormController.java -->
 <!-- Demonstrates model, view template, controller, -->
 <h2>Be Shouted At Using @RequestParam Binding</h2>
-<form action="shoutHelloAgain" method="GET">
+<form action="shoutAgain" method="GET">
     <input type="text" name="studentName" placeholder="Student Name">
     <br/>
     <input type="submit">
