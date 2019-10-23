@@ -11,7 +11,7 @@ import java.util.Map;
 @Controller
 @RequestMapping("/travel")
 public class TravelController {
-    @Value("#{schoolYearOptions}")
+    @Value("#{gradeLevelProp}")
     private Map<String, String> gradeLevelMap;
 
     @RequestMapping("/showForm")
