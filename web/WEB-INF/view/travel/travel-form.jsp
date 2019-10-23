@@ -38,10 +38,10 @@
     <br/>
     <br/>
     <!-- Fill a select box by reading values from a properties file -->
-    <!-- Values have been placed directly in the Spring MVC model -->
+    <!-- Map has been placed directly in the Spring MVC model -->
     School Year:
-    <form:select path="schoolYear">
-        <form:options items="${theSchoolYearOptions}"/>
+    <form:select path="gradeLevel">
+        <form:options items="${gradeLevelAttr}"/>
     </form:select>
     <br/>
     <br/>

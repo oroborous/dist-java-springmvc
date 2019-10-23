@@ -7,11 +7,10 @@ public class ExchangeStudent extends Student {
 
     private String homeCountry;
     private String hostCountry;
-    private int schoolYear;
+    private int gradeLevel;
     private String semester;
     private TravelMethod travelMethod;
     private String[] spokenLanguages;
-
 
     public String[] getSpokenLanguages() {
         return spokenLanguages;
@@ -37,12 +36,12 @@ public class ExchangeStudent extends Student {
         this.semester = semester;
     }
 
-    public int getSchoolYear() {
-        return schoolYear;
+    public int getGradeLevel() {
+        return gradeLevel;
     }
 
-    public void setSchoolYear(int schoolYear) {
-        this.schoolYear = schoolYear;
+    public void setGradeLevel(int gradeLevel) {
+        this.gradeLevel = gradeLevel;
     }
 
 

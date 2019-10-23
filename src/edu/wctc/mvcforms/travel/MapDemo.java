@@ -3,10 +3,7 @@ package edu.wctc.mvcforms.travel;
 import javax.swing.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.*;
 
 public class MapDemo {
 
@@ -14,7 +11,11 @@ public class MapDemo {
         MapDemo demo = new MapDemo();
         // demo.githubUsername();
         // demo.iterate();
-        demo.objectsAsKeys();
+        // demo.objectsAsKeys();
+        TravelMethod[] enumValues = TravelMethod.values();
+        for (TravelMethod value : enumValues) {
+            System.out.println(value);
+        }
     }
 
     public void githubUsername() {

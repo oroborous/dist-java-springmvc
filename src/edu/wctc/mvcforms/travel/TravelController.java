@@ -6,14 +6,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 @Controller
 @RequestMapping("/travel")
 public class TravelController {
     @Value("#{schoolYearOptions}")
-    private LinkedHashMap<String, String> schoolYearOptions;
+    private Map<String, String> gradeLevelMap;
 
     @RequestMapping("/showForm")
     public String showForm(Model model) {
@@ -29,7 +28,7 @@ public class TravelController {
         model.addAttribute("countries", new CountryOptions());
 
         // add the school year options to the model for use by the dropdown
-        model.addAttribute("theSchoolYearOptions", schoolYearOptions);
+        model.addAttribute("gradeLevelAttr", gradeLevelMap);
 
         // use an enum's values for the method of travel
         model.addAttribute("travelMethods", TravelMethod.values());
@@ -45,7 +44,7 @@ public class TravelController {
         System.out.println(theStudent.getLastName());
         System.out.println(theStudent.getHomeCountry());
         System.out.println(theStudent.getHostCountry());
-        System.out.println(theStudent.getSchoolYear());
+        System.out.println(theStudent.getGradeLevel());
         return "travel/travel-confirmation";
     }
 }

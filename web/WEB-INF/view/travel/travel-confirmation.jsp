@@ -13,7 +13,7 @@ Home country: ${exchStudent.homeCountry}
 <br/>
 Host country: ${exchStudent.hostCountry}
 <br/>
-School year: ${exchStudent.schoolYear}
+School year: ${exchStudent.gradeLevel}
 <br/>
 Semester: ${exchStudent.semester}
 <br/>
