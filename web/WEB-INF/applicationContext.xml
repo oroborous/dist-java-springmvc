@@ -33,4 +33,10 @@
 
     <!-- Load the countries options from a properties file -->
     <util:properties id="gradeLevelProp" location="classpath:../gradeLevel.properties"/>
+
+    <!-- Load resources with custom error messages -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <!-- Where to find the file with the messages -->
+        <property name="basename" value="resources/messages"/>
+    </bean>
 </beans>

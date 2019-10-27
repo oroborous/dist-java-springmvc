@@ -13,6 +13,9 @@
           <element id="library" level="project" name="jstl:jstl:1.2" />
           <element id="library" level="project" name="org.hibernate.validator:hibernate-validator:6.0.17.Final" />
         </element>
+        <element id="directory" name="resources">
+          <element id="dir-copy" path="$PROJECT_DIR$/src/resources" />
+        </element>
       </element>
     </root>
   </artifact>

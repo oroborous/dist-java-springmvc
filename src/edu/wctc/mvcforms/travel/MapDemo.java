@@ -53,7 +53,7 @@ public class MapDemo {
         printMap(myMap);
     }
 
-    public void printMap(Map<?, ?> anyMap) {
+    public static void printMap(Map<?, ?> anyMap) {
         anyMap.forEach((mapKey, mapValue) -> {
             System.out.println("key: " + mapKey + ", value: " + mapValue);
         });

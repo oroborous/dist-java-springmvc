@@ -5,5 +5,9 @@
 </head>
 <body>
 Thank you, ${theCustomer.firstName} ${theCustomer.lastName}
+<br/>
+You will receive ${theCustomer.freePasses} free passes to ${theCustomer.eventCode}
+<br/>
+Your postal code is ${theCustomer.postalCode}
 </body>
 </html>
