@@ -34,13 +34,13 @@ public class CustomerController {
 
     @RequestMapping("/processForm")
     // BindingResult parameter must immediately follow the attribute being validated!!
-    public String processForm(@ModelAttribute String randomNumber,
-                              @Valid @ModelAttribute("theCustomer") Customer theCustomer,
-                              BindingResult bindingResult,
-                              Model model) {
+    public String processForm(@Valid @ModelAttribute("theCustomer") Customer theCustomer,
+                              BindingResult bindingResult) {
         //System.out.println("Last name : |" + theCustomer.getLastName() + "|");
         //System.out.println("First name : |" + theCustomer.getFirstName() + "|");
 
+        // For a custom error messages, you can find the specific error code
+        // by printing the bindingResult object
         System.out.println();
         System.out.println(bindingResult);
         System.out.println();
