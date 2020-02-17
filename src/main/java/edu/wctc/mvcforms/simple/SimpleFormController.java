@@ -22,7 +22,7 @@ public class SimpleFormController {
     // method to read form data and add it to the model
     // The Model class is part of Spring
     @RequestMapping("/shout")
-    public String shout(HttpServletRequest request, Model model) {
+    public String shoutHello(HttpServletRequest request, Model model) {
         // Read request parameter that came from form
         String theName = request.getParameter("studentName");
 
@@ -45,14 +45,16 @@ public class SimpleFormController {
 
     @RequestMapping("/shoutAgain")
     public String shoutWithAnnotation(
-            @RequestParam("studentName") String theName,
+            @RequestParam String studentName,
+            // Can omit param name if same as the key
+            // @RequestParam("studentName") String theName,
             Model model) {
         // Does the same thing as shout() above, but Spring will read
         // the form param "studentName" from the HttpServletRequest
         // and assign it to the method param theName automatically
 
         // Create the message
-        String message = "Hello again, " + theName.toUpperCase() + "!!!!";
+        String message = "Hello again, " + studentName.toUpperCase() + "!!!!";
 
         // Add message to model
         // "msg" is the key, message contains the value
