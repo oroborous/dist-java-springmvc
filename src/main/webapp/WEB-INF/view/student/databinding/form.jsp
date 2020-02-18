@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +9,8 @@
 <body>
     <!-- modelAttribute must match the key given in model.addAttribute
          See showDataBindingForm() method in StudentDataBindingController class -->
-    <form:form action="processForm" modelAttribute="bindingStudent">
+    <c:url value="/student/databinding/processForm" var="actionUrl"/>
+    <form:form action="${actionUrl}" modelAttribute="bindingStudent">
 
         <!-- path attribute matches the field in the Student class -->
         <!-- When the form is loaded, Spring will call bindingStudent.getFirstName() -->

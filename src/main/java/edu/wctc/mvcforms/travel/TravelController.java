@@ -28,7 +28,7 @@ public class TravelController {
         model.addAttribute("countries", new CountryOptions());
 
         // add the school year options to the model for use by the dropdown
-        model.addAttribute("gradeLevelAttr", gradeLevelMap);
+        model.addAttribute("gradeLevels", gradeLevelMap);
 
         // use an enum's values for the method of travel
         model.addAttribute("travelMethods", TravelMethod.values());

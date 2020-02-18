@@ -18,7 +18,7 @@ public class StudentDataBindingController {
         model.addAttribute("bindingStudent", theStudent);
 
         // return name of view template
-        return "student/databinding/student-form-binding";
+        return "student/databinding/form";
     }
 
     @RequestMapping("/processForm")
@@ -26,6 +26,6 @@ public class StudentDataBindingController {
         // Some output just to prove that Spring populated the Student object
         System.out.println(theStudent.getFirstName());
         System.out.println(theStudent.getLastName());
-        return "student/databinding/student-confirmation-binding";
+        return "student/databinding/confirmation";
     }
 }

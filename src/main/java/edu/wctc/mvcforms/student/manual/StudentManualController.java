@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 public class StudentManualController {
     @RequestMapping("/showForm")
     public String showManualForm() {
-        return "student/manual/student-form-manual";
+        return "student/manual/form";
     }
 
     @RequestMapping("/processForm")
@@ -28,6 +28,6 @@ public class StudentManualController {
         model.addAttribute("manualStudent", studentObj);
 
         // return name of view template
-        return "student/manual/student-confirmation-manual";
+        return "student/manual/confirmation";
     }
 }

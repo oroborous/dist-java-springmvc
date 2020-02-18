@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -5,7 +6,8 @@
     <jsp:include page="/WEB-INF/view/includes/header.jsp"/>
 </head>
 <body>
-<form action="processForm">
+<c:url value="/student/databinding/processForm" var="actionUrl"/>
+<form action="${actionUrl}">
     First name: <input type="text" name="firstName">
     <br/>
     <br/>

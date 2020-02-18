@@ -9,16 +9,16 @@
 
 <h1>Distributed Java: Spring MVC Examples</h1>
 
-<h3>A Simple Form</h3>
-<p>
-    <a href="<c:url value="/showForm"/>">Go to form</a>
-</p>
-
 <h3>Controller-Level Request Mapping</h3>
 <ul>
     <li><a href="<c:url value="/registrar/home"/>">Registrar</a></li>
     <li><a href="<c:url value="/finaid/home"/>">Financial Aid</a></li>
 </ul>
+
+<h3>A Simple Form</h3>
+<p>
+    <a href="<c:url value="/showForm"/>">Go to form</a>
+</p>
 
 <h3>Using the Spring MVC Model: Student Forms</h3>
 <ul>

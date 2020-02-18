@@ -2,3 +2,8 @@ body {
     background-color: lemonchiffon;
     font-family: Verdana;
 }
+
+.error {
+    color: red;
+    font-size: xx-small;
+}

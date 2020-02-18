@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,7 +9,8 @@
 <body>
 <!-- modelAttribute must match the key given in model.addAttribute
      See showForm() method in TravelController class -->
-<form:form action="processForm" modelAttribute="exchStudent">
+<c:url value="/travel/processForm" var="actionUrl"/>
+<form:form action="${actionUrl}" modelAttribute="exchStudent">
 
     <!-- path attribute matches the field in the ExchangeStudent class -->
     <!-- When the form is loaded, Spring will call exchStudent.getFirstName() -->
@@ -23,7 +25,7 @@
     <!-- Fill a select box by hardcoding options in JSP -->
     <form:select path="homeCountry">
         <!-- label is what the user sees in the dropdown -->
-        <!-- value is what is passed to exchStudent.setCountry(...) -->
+        <!-- value is what is passed to exchStudent.setHomeCountry(...) -->
         <form:option value="BR" label="Brazil"/>
         <form:option value="FR" label="France"/>
         <form:option value="DE" label="Germany"/>
@@ -34,7 +36,7 @@
     <!-- Fill a select box by hardcoding options in bean -->
     Host Country:
     <form:select path="hostCountry">
-        <form:options items="${countries.countryOptions}"/>
+        <form:options items="${countries.map}"/>
     </form:select>
     <br/>
     <br/>
@@ -42,7 +44,7 @@
     <!-- Map has been placed directly in the Spring MVC model -->
     School Year:
     <form:select path="gradeLevel">
-        <form:options items="${gradeLevelAttr}"/>
+        <form:options items="${gradeLevels}"/>
     </form:select>
     <br/>
     <br/>
@@ -58,8 +60,8 @@
     <br/>
 Languages Spoken:
     <form:checkbox path="spokenLanguages" value="English"/> English
-    <form:checkbox path="spokenLanguages" value="French"/> French
-    <form:checkbox path="spokenLanguages" value="German"/> German
+    <form:checkbox path="spokenLanguages" value="Spanish"/> Spanish
+    <form:checkbox path="spokenLanguages" value="Turkish"/> Turkish
     <br/>
     <br/>
     <input type="submit" value="Register"/>
