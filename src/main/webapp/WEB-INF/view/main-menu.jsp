@@ -34,6 +34,8 @@
 <h3>Validation</h3>
 <p>
     <a href="<c:url value="/validation/showForm"/>">Customer Information</a>
+    <br/>
+    <a href="<c:url value="/validation/list"/>">List Customers</a>
 </p>
 
 <p>

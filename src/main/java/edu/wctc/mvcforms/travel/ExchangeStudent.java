@@ -4,7 +4,6 @@ import edu.wctc.mvcforms.student.Student;
 
 public class ExchangeStudent extends Student {
 
-
     private String homeCountry;
     private String hostCountry;
     private int gradeLevel;

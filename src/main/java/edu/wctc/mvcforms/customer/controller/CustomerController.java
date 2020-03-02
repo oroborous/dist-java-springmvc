@@ -1,6 +1,8 @@
-package edu.wctc.mvcforms.validation;
+package edu.wctc.mvcforms.customer.controller;
 
-import edu.wctc.mvcforms.travel.MapDemo;
+import edu.wctc.mvcforms.customer.entity.Customer;
+import edu.wctc.mvcforms.customer.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,10 +13,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/validation")
 public class CustomerController {
+    @Autowired
+    private CustomerService customerService;
+
+    @RequestMapping("/list")
+    public String showCustomerList(Model model) {
+        List<Customer> list = customerService.getCustomerList();
+        model.addAttribute("allCustomers", list);
+        return "customer/customer-list";
+    }
 
     // Add an InitBinder to pre-process all web requests to this controller
     @InitBinder
@@ -29,7 +41,7 @@ public class CustomerController {
     @RequestMapping("/showForm")
     public String showForm(Model model) {
         model.addAttribute("theCustomer", new Customer());
-        return "validation/customer-form";
+        return "customer/customer-form";
     }
 
     @RequestMapping("/processForm")
@@ -47,9 +59,9 @@ public class CustomerController {
 
         // Send user back to the original form if errors were found
         if (bindingResult.hasErrors()) {
-            return "validation/customer-form";
+            return "customer/customer-form";
         }
         // No errors, send user to confirmation page
-        return "validation/customer-confirmation";
+        return "customer/customer-confirmation";
     }
 }

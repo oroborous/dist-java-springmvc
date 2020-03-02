@@ -1,4 +1,6 @@
-package edu.wctc.mvcforms.validation;
+package edu.wctc.mvcforms.customer.entity;
+
+import edu.wctc.mvcforms.customer.EventCode;
 
 import javax.validation.constraints.*;
 
@@ -15,6 +17,7 @@ public class Customer {
     @NotNull(message = "can''t be null")
     @Min(value = 0, message = "minimum 0")
     @Max(value = 10, message = "maximum 10")
+    // was originally an int field but changed to Integer so it's nullable
     private Integer freePasses;
 
     @Pattern(regexp = "[A-Z][0-9][A-Z] [0-9][A-Z][0-9]", message = "invalid postal code")

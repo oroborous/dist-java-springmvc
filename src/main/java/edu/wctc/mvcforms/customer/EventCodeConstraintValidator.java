@@ -1,4 +1,4 @@
-package edu.wctc.mvcforms.validation;
+package edu.wctc.mvcforms.customer;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

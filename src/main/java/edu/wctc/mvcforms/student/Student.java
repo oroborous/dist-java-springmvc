@@ -1,8 +1,5 @@
 package edu.wctc.mvcforms.student;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Student {
     private String firstName;
     private String lastName;
