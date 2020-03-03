@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="dist-java-spring-mvc" target="11" />
+      <module name="dist-java-spring-mvc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,6 +3,7 @@ package edu.wctc.mvcforms.customer;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
+// <Class of annotation to validate, Data type of fields it can validate>
 public class EventCodeConstraintValidator implements ConstraintValidator<EventCode, String> {
 
     // A field to capture the valid value, as specified when the annotation is
@@ -27,7 +28,8 @@ public class EventCodeConstraintValidator implements ConstraintValidator<EventCo
      */
     @Override
     public boolean isValid(String theCode, ConstraintValidatorContext constraintValidatorContext) {
-        // Add our business logic here to determ
+        // Add our business logic here to determine if the field theCode
+        // contains a value that meets our validation rules or not
         return theCode != null && theCode.startsWith(eventPrefix);
     }
 }
